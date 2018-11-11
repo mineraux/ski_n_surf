@@ -1,6 +1,6 @@
-# ski_n_surf
+# Redesign of Ski'N Surf
 
-> Ski n surf website running with Nuxt.js
+> Ski'N Surf website running with Nuxt.js
 
 ## Build Setup
 
