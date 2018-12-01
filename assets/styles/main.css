@@ -38,6 +38,7 @@ body {
 
 .split {
   display: flex;
+  align-items: center;
 }
 
 .split--2>*{

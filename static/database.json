@@ -1,0 +1,48 @@
+{
+  "ski_snow" : {
+    "label" : "ski ou snow",
+    "saison" : {
+      "rouge" : "56",
+      "noir" : "56",
+      "argent" : "56"
+    },
+    "semaine" : {
+      "rouge" : "56",
+      "noir" : "56",
+      "argent" : "56"
+    },
+    "1 jour" : {
+      "rouge" : "56",
+      "noir" : "56",
+      "argent" : "56"
+    },
+    "2 jours" : {
+      "rouge" : "56",
+      "noir" : "56",
+      "argent" : "56"
+    }
+  },
+  "raquettes" : {
+    "label" : "raquettes",
+    "saison" : {
+      "rouge" : "10",
+      "noir" : "10",
+      "argent" : "10"
+    },
+    "semaine" : {
+      "rouge" : "10",
+      "noir" : "10",
+      "argent" : "10"
+    },
+    "1 jour" : {
+      "rouge" : "10",
+      "noir" : "10",
+      "argent" : "10"
+    },
+    "2 jours" : {
+      "rouge" : "10",
+      "noir" : "10",
+      "argent" : "10"
+    }
+  }
+}
