@@ -1,16 +1,23 @@
 <template>
-    <button class="project-preview-title">{{ price }}</button>
+    <button class="project-preview-title" @click="toggleActiveFilter()">{{ label }}</button>
 </template>
 
 <script>
 export default {
-  props: ["price"],
+  props: ["label", "id"],
 
-  // methods: {
-  //     switched() {
-  //       this.$el.classList.toggle('active')
-  //     }
-  // }
+  methods: {
+    toggleActiveFilter() {
+      this.$emit('filter_clicked', this.label)
+
+      // const buttonRef = event.target;
+      // const allFilters = document.querySelectorAll('.filter-single')
+      // allFilters.forEach(filter => {
+      //   filter.classList.remove('active')
+      // });
+      // buttonRef.classList.add('active')
+    }
+  }
 }
 </script>
 

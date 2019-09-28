@@ -29,6 +29,36 @@
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    // updatePrices() {
+    //   const item = this.$store.getters.loadPricesShop[0]
+    //   console.log(item)
+    //   return item
+    // }
+  },
+  methods : {
+    test (){
+      const prices = Object.entries(this.$store.getters.loadPricesShop)
+
+      prices.forEach(price => {
+        console.log(price)
+      });
+
+      const test = prices.filter(price => {
+        if (price[0] == "raquettes") {
+          return price
+        }
+      })
+
+      console.log(test)
+    }
+  }
+}
+</script>
+
+
 <style scoped>
   .price-table-wrapper{
     display: grid;  

@@ -4,9 +4,9 @@
     <div class="filter-wrapper">
       <ShopFilter 
       v-for="(price, index) in loadPricesShop" 
-      :price="price.label"
+      :label="price.label"
       :key="index"
-      @click="toggleActiveClass()"
+      v-on:filter_clicked=filterDatas($event)
       />
     </div>
     <PriceTable />
@@ -14,6 +14,10 @@
 </template>
 
 <script>
+/**
+ * Get id pressed button
+ * Pass correct data with the previous id (database key) to the priceTable component
+ */
 import ShopFilter from "~/components/Parts/Location/ShopFilter.vue";
 import PriceTable from "~/components/Parts/Location/PriceTable.vue";
 
@@ -22,23 +26,43 @@ export default {
     ShopFilter,
     PriceTable
   },
+  created() {
+    // this.player.on("playing", event => {
+    //   this.$root.$emit("playerPlaying", this.player);
+    // });
+    //this.$root.$on("enableAutoScroll",
+    // this.$on('filter_clicked', (args) => {
+    //   console.log('test')
+    // })
+  },
   computed: {
     loadPricesShop() {
-      console.log(this.$store.getters.loadPricesShop);
-      return this.$store.getters.loadPricesShop;
+      const prices = this.$store.getters.loadPricesShop
+      console.log(prices)
+      
+      return prices;
     }
   },
-
   methods: {
-    toggleActiveClass() {
-      const buttonRef = event.target;
-      console.log('test')
-      const allFilters = document.querySelectorAll('.filter-single')
-      allFilters.forEach(filter => {
-        filter.classList.remove('active')
+    filterDatas(event) {
+      console.log('test', event)
+      // console.log(Object.keys(prices).length)
+
+      const prices = Object.entries(this.$store.getters.loadPricesShop)
+
+      prices.forEach(price => {
+        console.log(price)
       });
-      buttonRef.classList.add('active')
+
+      const test = prices.filter(price => {
+        if (price[0] == "raquettes") {
+          return price
+        }
+      })
+
+      console.log(test)
     }
+    
   }
 };
 </script>
